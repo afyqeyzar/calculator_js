@@ -21,8 +21,18 @@ function operate(operator, num1, num2){
 const displayBox = document.querySelector('#display')
 var displayValue = 0
 
-function display(number){
-    displayBox.textContent = number
+function display(){
+    displayBox.textContent = displayValue
 }
 
-display(59)
+const oneBtn = document.querySelector('#one')
+oneBtn.addEventListener('click',() => {
+    displayValue = 1
+    display()
+});
+
+const twoBtn = document.querySelector('#two')
+twoBtn.addEventListener('click',() => {
+    displayValue = 2
+    display()
+});

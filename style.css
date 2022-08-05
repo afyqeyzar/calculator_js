@@ -3,7 +3,18 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: Inter,sans-serif;
 }
+
+h1 {
+    margin-bottom: 0px;
+}
+
+h3 {
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
 
 #display{
     border: 3px solid #121212;

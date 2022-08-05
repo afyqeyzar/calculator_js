@@ -44,12 +44,19 @@ function numberDisplay(number){
 }
 
 function operatorDisplay(index){
-    keptValue = displayValue
-    console.log("firstValue: " + keptValue)
-    displayValue = 0
-    console.log("displayValue: " + displayValue)
-    operator = operatorList[index]
-    //equal()
+    if (keptValue != null){
+        equal();
+        keptValue = displayValue;
+        displayValue = 0;
+        operator = operatorList[index]
+    }
+    else {
+        keptValue = displayValue;
+        console.log("firstValue: " + keptValue)
+        displayValue = 0;
+        console.log("displayValue: " + displayValue)
+        operator = operatorList[index]
+    }
 }
 
 // Loop to assign each button a number value

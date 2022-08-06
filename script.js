@@ -21,7 +21,7 @@ function operate(operator, num1, num2){
 
 //coding the buttons
 const displayBox = document.querySelector('#display')
-var displayValue = null
+var displayValue = ""
 var operatorList = [add, subtract, multiply ,divide]
 var operator = null
 var keptValue = null
@@ -31,7 +31,7 @@ function display(){
 };
 
 function equal(){
-    let answer = operate(operator, keptValue, displayValue)
+    let answer = operate(operator, Number(keptValue), Number(displayValue))
     console.log("answer: " + answer)
     displayValue = answer
     console.log("displayValue: " + displayValue)
@@ -39,7 +39,8 @@ function equal(){
 }
 
 function numberDisplay(number){
-    displayValue = number
+    let str = number.toString()
+    displayValue = displayValue.concat(str)
     display()
 }
 
@@ -47,13 +48,13 @@ function operatorDisplay(index){
     if (keptValue != null){
         equal();
         keptValue = displayValue;
-        displayValue = 0;
+        displayValue = "";
         operator = operatorList[index]
     }
     else {
         keptValue = displayValue;
         console.log("firstValue: " + keptValue)
-        displayValue = 0;
+        displayValue = "";
         console.log("displayValue: " + displayValue)
         operator = operatorList[index]
     }
@@ -94,7 +95,7 @@ equalBtn.addEventListener('click', () => equal());
 
 const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', () => {
-    displayValue = null;
+    displayValue = "";
     keptValue = null;
     display()
 })

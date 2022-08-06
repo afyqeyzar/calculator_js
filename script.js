@@ -44,6 +44,16 @@ function numberDisplay(number){
     display()
 }
 
+function decimalDisplay(){
+    if (displayValue.includes(".") == true){
+        return
+    }
+    else {
+        displayValue = displayValue.concat(".");
+        display();
+    }
+}
+
 function operatorDisplay(index){
     if (keptValue != null){
         equal();
@@ -89,6 +99,8 @@ divideBtn.addEventListener('click', () => operatorDisplay(3));
 //     element1.addEventListener('click', () => operatorDisplay(i));
 // }
 
+const decimalBtn = document.querySelector('#decimal');
+decimalBtn.addEventListener('click', () => decimalDisplay());
 
 const equalBtn = document.querySelector('#equal');
 equalBtn.addEventListener('click', () => equal());
